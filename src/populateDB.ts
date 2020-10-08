@@ -3,7 +3,7 @@ import { AnimeController } from "./typeORM/controller/AnimeController";
 import { Anime } from "./typeORM/entity/Anime";
 import { initDB } from "./typeORM";
 
-const anime: Anime[] = [
+export const anime: Anime[] = [
   {
     title: "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
     synopsis: "Even after dying countless times, Subaru finally ended the threat of the White Whale and defeated the Witch Cult's Sin Archbishop representing sloth, Petelgeuse Romaneeconti. But only shortly after overcoming a tragic ending and reuniting with his beloved Emilia, Subaru learns that Rem has been erased from this world, having fallen victim to the White Whale's Fog of Elimination in the midst of Subaru's death loop. With the White Whale now gone, Subaru and Emilia are forced to confront a reality they never dreamed would happen. (Source: Crunchyroll) This anime has Drama, Fantasy, Psychological, Thriller."
@@ -23,5 +23,5 @@ const populate = async () => {
   console.log("done");
 };
 
-populate();
+//populate();
 

@@ -9,7 +9,7 @@ export class AnimeController {
   }
 
   async addAnime(title: string, syn: string) {
-    const anime = (await this.getAnimeByTitle(title)) ?? new Anime();
+    const anime = new Anime();
     anime.synopsis = syn;
     anime.title = title;
 
@@ -18,10 +18,11 @@ export class AnimeController {
   }
 
   async getAnimeByTitle(title): Promise<Anime> {
-    this.manager.findOneOrFail(Anime, { title: title })
-      .then((a: Anime) => { return a })
-      .catch(() => { return null });
-    return null;
+    try {
+      return await this.manager.findOneOrFail(Anime, { title: title })
+    } catch (e) {
+      return null;
+    }
   }
 
 }
