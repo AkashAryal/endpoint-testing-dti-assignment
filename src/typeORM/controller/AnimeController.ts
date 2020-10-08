@@ -9,7 +9,7 @@ export class AnimeController {
   }
 
   async addAnime(title: string, syn: string) {
-    const anime = new Anime();
+    const anime = (await this.getAnimeByTitle(title)) ?? new Anime();
     anime.synopsis = syn;
     anime.title = title;
 

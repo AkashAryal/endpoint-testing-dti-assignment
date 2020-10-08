@@ -4,11 +4,11 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 export class Anime {
 
   @PrimaryGeneratedColumn()
-  id: number
+  id?: number
 
   @Column()
   title: string
 
-  @Column()
+  @Column("text")
   synopsis: string
 }
