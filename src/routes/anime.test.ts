@@ -1,7 +1,7 @@
 import { app } from "../server";
 import supertest, { Response } from "supertest";
 import { Anime } from "../typeORM/entity/Anime";
-import { initDB } from "../typeORM/index";
+import { initDB, closeDB } from "../typeORM/index";
 
 const request = supertest(app);
 
@@ -16,6 +16,10 @@ it('get request to /anime/get/:anime with anime that does not exist in db', asyn
   expect(response.body.anime).toBe(null);
 
   done()
+});
+
+afterAll(async () => {
+  await closeDB();
 });
 
 
