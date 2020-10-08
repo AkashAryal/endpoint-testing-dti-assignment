@@ -9,6 +9,8 @@ export class AnimeController {
   }
 
   async addAnime(title: string, syn: string) {
+    if (await this.getAnimeByTitle(title) != null) return -1;
+
     const anime = new Anime();
     anime.synopsis = syn;
     anime.title = title;
