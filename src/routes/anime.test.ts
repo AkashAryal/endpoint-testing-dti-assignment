@@ -24,7 +24,7 @@ it("get request to /anime/get/:anime with re zero", async done => {
   expect(response.status).toBe(200);
 
   const expected = anime[0];
-  expected.id = 13;
+  expected.id = 1;
   expect(response.body.anime).toMatchObject(expected);
 
   done();
