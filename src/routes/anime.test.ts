@@ -1,6 +1,5 @@
 import { app } from "../server";
 import supertest, { Response } from "supertest";
-import { Anime } from "../typeORM/entity/Anime";
 import { initDB, closeDB } from "../typeORM/index";
 import { anime } from "../populateDB";
 

@@ -23,6 +23,5 @@ const populate = async () => {
   console.log("done");
 };
 
-//uncomment when populating.
-//populate();
+populate();
 
